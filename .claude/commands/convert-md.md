@@ -31,8 +31,9 @@ Implementation approach:
 1. Use Task tool to launch subagents for parallel processing when multiple DOCX files found
 2. Each subagent handles one file: find .docx files, convert using pandoc, extract description from first paragraph
 3. Apply the frontmatter format above with current date and default author
-4. Generate a reasonable slug filename based on content (e.g., "bmr.md" for basic metabolic rate content)
-5. Preserve markdown formatting and Chinese content structure
-6. Save as .md files with the generated slug name instead of original DOCX name
+4. Remove any H1 headers (# Title) from content since title is already in frontmatter
+5. Generate a reasonable slug filename based on content (e.g., "bmr.md" for basic metabolic rate content)
+6. Preserve markdown formatting and Chinese content structure
+7. Save as .md files with the generated slug name instead of original DOCX name
 
 Arguments: $ARGUMENTS (optional: specific directory path, defaults to current directory)
